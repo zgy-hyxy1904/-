@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bean头部 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd              
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+        
+	<mvc:resources mapping="/js/**" location="/js/" /> 
+	<mvc:resources mapping="/style/**" location="/style/" />
+	<mvc:resources mapping="/upload/**" location="/upload/" />
+	<mvc:resources mapping="/temp/**" location="/temp/" />
+	<mvc:annotation-driven />
+        
+	<context:component-scan base-package="com.bicsoft.sy.controller" />
+	
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+    <bean id="multipartResolver" class="com.bicsoft.sy.common.CommonsMultipartResolverExt">
+    	<property name="maxInMemorySize" value="40960" />
+    	<property name="maxUploadSize" value="5242880" />  
+        <property name="defaultEncoding" value="UTF-8"></property>  
+        <property name="uploadTempDir" value="uploadtmp" />  
+    </bean> 
+    
+	<!-- 登陆验证 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**/*" />
+			<bean class="com.bicsoft.sy.common.CommonInterceptor">
+				<property name="allowUrls">
+					<list>
+						<value>/user/login</value>
+						<value>/api/</value>
+						<value>/mobile/</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+</beans>

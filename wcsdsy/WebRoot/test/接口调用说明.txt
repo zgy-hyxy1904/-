@@ -1,0 +1,265 @@
+调用说明：
+status=0  调用成功
+status=1  调用失败
+msg 调用失败时的错误信息
+data 如果接口涉及到相关数据，数据封封装在data字段中
+ 
+
+１.土地认证接口
+  param1:contractorIDType(证件类型)　*
+  param2:contractorID(证件ID)　　　　*
+  　调用示例：http://localhost:8080/suyuan/api/getContratorInfo?contractorIDType=01&contractorID=232103196211031736
+  peasant农业对像参考：com.bicsoft.sy.entity.peasant;
+　contract土地合同对像参考：com.bicsoft.sy.entity.Contract
+  　返回数据结构如下：
+{
+    "status": 0,
+    "msg": "success",
+    "data": {
+        "contract": [
+            {
+                "id": 2713,
+                "contractorCode": "230184206200000001",
+                "graphCode": "4974.00-42599.50",
+                "landCode": "02887",
+                "landName": "老于坟地南北垄",
+                "contractArea": 1.44,
+                "measurementMu": 1.44,
+                "eastTo": "刘有",
+                "westTo": "刘长清",
+                "southTo": "刘长江",
+                "northTo": "沟渠",
+                "landLevel": "二等地",
+                "landType": "02",
+                "isBaseLand": "是",
+                "ownership": "",
+                "landClass": null,
+                "disputeReason": null,
+                "landPurpose": "种植业",
+                "contractStartDate": null,
+                "contractYear": null,
+                "contractEndDate": null
+            },
+            {
+                "id": 2714,
+                "contractorCode": "230184206200000001",
+                "graphCode": "4973.50-42599.00",
+                "landCode": "03616",
+                "landName": "四河门南北垄",
+                "contractArea": 2.14,
+                "measurementMu": 2.14,
+                "eastTo": "于忠孝",
+                "westTo": "关玉忠",
+                "southTo": "道路",
+                "northTo": "道路",
+                "landLevel": "三等地",
+                "landType": "02",
+                "isBaseLand": "是",
+                "ownership": "",
+                "landClass": null,
+                "disputeReason": null,
+                "landPurpose": "种植业",
+                "contractStartDate": null,
+                "contractYear": null,
+                "contractEndDate": null
+            },
+            {
+                "id": 2715,
+                "contractorCode": "230184206200000001",
+                "graphCode": "4974.00-42600.50",
+                "landCode": "02974",
+                "landName": "房东南北垄",
+                "contractArea": 3.97,
+                "measurementMu": 3.97,
+                "eastTo": "宁学彬",
+                "westTo": "王占江2",
+                "southTo": "道路",
+                "northTo": "道路",
+                "landLevel": "一等地",
+                "landType": "02",
+                "isBaseLand": "是",
+                "ownership": "",
+                "landClass": null,
+                "disputeReason": null,
+                "landPurpose": "种植业",
+                "contractStartDate": null,
+                "contractYear": null,
+                "contractEndDate": null
+            },
+            {
+                "id": 2716,
+                "contractorCode": "230184206200000001",
+                "graphCode": "4974.00-42599.50",
+                "landCode": "03046",
+                "landName": "坝下稻地",
+                "contractArea": 0.39,
+                "measurementMu": 0.39,
+                "eastTo": "沟渠",
+                "westTo": "沟渠",
+                "southTo": "道路",
+                "northTo": "沟渠",
+                "landLevel": "一等地",
+                "landType": "01",
+                "isBaseLand": "否",
+                "ownership": "",
+                "landClass": null,
+                "disputeReason": null,
+                "landPurpose": "种植业",
+                "contractStartDate": null,
+                "contractYear": null,
+                "contractEndDate": null
+            },
+            {
+                "id": 2717,
+                "contractorCode": "230184206200000001",
+                "graphCode": "4974.50-42600.00",
+                "landCode": "02373",
+                "landName": "豪北大地",
+                "contractArea": 1.64,
+                "measurementMu": 1.64,
+                "eastTo": "道路",
+                "westTo": "道路",
+                "southTo": "杜才",
+                "northTo": "刘长清",
+                "landLevel": "二等地",
+                "landType": "02",
+                "isBaseLand": "是",
+                "ownership": "",
+                "landClass": null,
+                "disputeReason": null,
+                "landPurpose": "种植业",
+                "contractStartDate": null,
+                "contractYear": null,
+                "contractEndDate": null
+            },
+            {
+                "id": 2718,
+                "contractorCode": "230184206200000001",
+                "graphCode": "4975.00-42600.00",
+                "landCode": "02040",
+                "landName": "岗上",
+                "contractArea": 0.12,
+                "measurementMu": 0.97,
+                "eastTo": "王富",
+                "westTo": "沟渠",
+                "southTo": "刘长山",
+                "northTo": "朱和",
+                "landLevel": "一等地",
+                "landType": "02",
+                "isBaseLand": "是",
+                "ownership": "",
+                "landClass": null,
+                "disputeReason": null,
+                "landPurpose": "种植业",
+                "contractStartDate": null,
+                "contractYear": null,
+                "contractEndDate": null
+            }
+        ],
+        "peasant": {
+            "id": 1,
+            "contractorCode": "230184206200000001",
+            "contractorName": "周玉忠",
+            "contractorID": "232103196211031736",
+            "contractorIDType": "01",
+            "contractorAge": 53,
+            "contractorSex": "男",
+            "contractorBirth": "1962-11-03",
+            "contractorTel": "13234990099",
+            "cityCode": "230184",
+            "townCode": "206",
+            "countryCode": "200",
+            "groupName": "民意乡九合村八里屯",
+            "contractorZipcode": "150207",
+            "contractorhouseholdType": "农业户口",
+            "contractorType": "01",
+            "contractId": null,
+            "contractorNation": "汉族",
+            "rightId": null,
+            "attestor": null,
+            "attestMechanism": null,
+            "attestDate": null,
+            "attestNo": null,
+            "landPurpose": "种植业",
+            "rightGetWay": "家庭承包",
+            "contractStartDate": 883584000000,
+            "contractYear": 30,
+            "contractEndDate": 1830182400000,
+            "getLandPersonCount": null,
+            "familyPersonCount": null,
+            "surveyDate": null,
+            "surveyMemo": null
+        }
+    }
+}
+
+２.土地认证二次较验接口方式一
+　　param1:regId(土地备案主表b_GeneralLandRegD中的id)  *
+　　调用示例：http://localhost:8080/suyuan/api/checkGeneReg?regId＝1
+   　根据data.status判断较验结果
+   　返回数据结构：
+  　 成功：
+  {
+    "status":0,
+    "msg":null,
+    "data":null
+  } 
+    失败：
+  {
+    "status":1,
+    "msg":"没有找到该批次信息",
+    "data":null
+  }
+ 　
+3.土地认证二次较验接口方式二
+　　param1:geneLandRegModel(每个承包商备案面积列表，每条记录包括idType,contractorID,archiveAcreage)  *
+  param1:year(年度)*
+　　调用示例：http://localhost:8080/suyuan/api/checkGeneRegExt
+   　根据data.status判断较验结果
+   　返回数据结构：
+  　 成功：
+  {
+    "status":0,
+    "msg":null,
+    "data":null
+  } 
+    失败：
+  {
+    "status":1,
+    "msg":"没有找到该批次信息",
+    "data":null
+  }
+   
+4.防伪码召回：
+   param1:batchNo(批次号)  *
+   param1:classId(品类)  *
+　　调用示例：http://localhost:8080/suyuan/api/recall?batchNo=1&productCode=02
+　　  成功：
+   {
+    "status":0,
+    "msg":null,
+    "data":null
+   }
+  {
+    "status":1,
+    "msg":"没有找到该批次信息",
+    "data":null
+   }
+   
+5.防伪码激活：
+   param1:batchNo(批次号)  *
+   param1:classId(品类)  *
+　　调用示例：http://localhost:8080/suyuan/api/codeActivate?batchNo=1&productCode=02
+       成功：
+   {
+    "status":0,
+    "msg":null,
+    "data":null
+   }    
+       失败
+　　 {
+    "status":1,
+    "msg":"没有找到该批次信息",
+    "data":null
+   }
+ 　
